@@ -1,0 +1,28 @@
+Struct SampleStruct
+{
+  char[nameLen:255] name;
+	int age;
+	int		phone;
+}
+
+ Struct StructA
+{
+	SampleStruct[listLen] list;
+	SampleStruct stru;
+	int[numListLen] numList;
+}
+
+class  SampleRpc
+{
+	voidReq ();
+	voidAck();
+	sampleFuncReq ( SampleStruct ss);
+	sampleFuncAck ( StructA sa );
+	sampleFuncPost (SampleStruct ss);
+	sampleFuncNtf (StructA sa);
+	helloReq (	char[strLen]  strMsg);
+	helloAck ( char[strLen]  strMsg);
+	towParamReq ( SampleStruct ss, char[strLen] name);
+	towParamAck ( int count);
+}
+
