@@ -4,27 +4,27 @@ Emerald Dream
 项目目录结构
 ------------
 
-1. Art
+### Art
 
    存放所有美术资源。
 
-2. EasyTouchBundle
+### EasyTouchBundle
 
    EasyTouch插件包：手势按键输入及摇杆等。
 
-3. FlowInLib
+### FlowInLib
 
    游戏核心框架：GameRoot（游戏启动Scene，用于存放整个游戏过程中不需要被销毁的GO，目前用于存放UIRoot）、配置管理、日志输出、版本维护、打AB包等。
 
-4. NGUI
+### NGUI
 
    GUI库。
 
-5. Prefabs
+### Prefabs
 
    存放所有游戏使用到的prefab。
 
-6. Scenes
+### Scenes
 
    存放所有Scene。
    
@@ -42,11 +42,11 @@ Emerald Dream
    
    * 基本逻辑框架可以参考UE4。
 
-7. Scripts
+### Scripts
 
    存放所有逻辑脚本。
 
-8. StreamingAssets
+### StreamingAssets
 
    此文件夹为打AB包后自动生成的。
 
