@@ -848,6 +848,7 @@ GameObject:
   - component: {fileID: 1891912554}
   - component: {fileID: 1891912553}
   - component: {fileID: 1891912552}
+  - component: {fileID: 1891912555}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -890,6 +891,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1891912555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1891912551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d802628a46838147b035723ecbcb5c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrackPieceArray:
+  - {fileID: 1259557652659158, guid: 6754a789864cf5d43bb801a5d1ea738d, type: 2}
+  - {fileID: 1412656692853516, guid: b2e6ef73e60d25043b8d8bcf7990eef1, type: 2}
+  - {fileID: 1044784159785708, guid: b081cd8fa7c8ba0448e4bf2589c5d027, type: 2}
+  TotalTrackLength: 160
 --- !u!1001 &1973088520
 Prefab:
   m_ObjectHideFlags: 0
@@ -932,6 +949,10 @@ Prefab:
     - target: {fileID: 9500000, guid: f1d84cc28597f5641a3d9cbc4df7e306, type: 3}
       propertyPath: m_Controller
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 100078, guid: f1d84cc28597f5641a3d9cbc4df7e306, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1d84cc28597f5641a3d9cbc4df7e306, type: 3}
