@@ -179,6 +179,7 @@ GameObject:
   - component: {fileID: 33628152206981652}
   - component: {fileID: 23695098053466026}
   - component: {fileID: 95996452990855366}
+  - component: {fileID: 64473874724760618}
   m_Layer: 0
   m_Name: mesh
   m_TagString: Untagged
@@ -438,6 +439,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1875231080324014}
   m_Mesh: {fileID: 4300000, guid: d525dc50599952f488e2b18f9e59f67c, type: 3}
+--- !u!64 &64473874724760618
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1875231080324014}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: d525dc50599952f488e2b18f9e59f67c, type: 3}
 --- !u!95 &95996452990855366
 Animator:
   serializedVersion: 3
@@ -494,6 +509,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0
 --- !u!114 &114198994209615828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -505,6 +522,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0
 --- !u!114 &114492417521518456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -516,6 +535,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0
 --- !u!114 &114608784921014962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -527,6 +548,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0
 --- !u!114 &114738652610118776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -552,6 +575,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0
 --- !u!114 &114886519139194456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -563,3 +588,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0

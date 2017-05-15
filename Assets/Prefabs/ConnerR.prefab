@@ -260,6 +260,7 @@ GameObject:
   - component: {fileID: 33397185878127950}
   - component: {fileID: 23889344333632118}
   - component: {fileID: 95212971594780512}
+  - component: {fileID: 64974117443115398}
   m_Layer: 0
   m_Name: mesh
   m_TagString: Untagged
@@ -798,6 +799,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1469530763236688}
   m_Mesh: {fileID: 4300000, guid: cfdc5986264839d4fbe1d906187a7886, type: 3}
+--- !u!64 &64974117443115398
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1469530763236688}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: cfdc5986264839d4fbe1d906187a7886, type: 3}
 --- !u!95 &95212971594780512
 Animator:
   serializedVersion: 3
@@ -826,6 +841,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0
 --- !u!114 &114040206822196428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -837,6 +854,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0
 --- !u!114 &114080832252137034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -848,6 +867,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0
 --- !u!114 &114093859133294122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -859,6 +880,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0
 --- !u!114 &114146370333476822
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -870,6 +893,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0
 --- !u!114 &114201862067755296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -881,6 +906,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0
 --- !u!114 &114344154262772656
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -892,6 +919,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0
 --- !u!114 &114344551706615466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -903,6 +932,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0
 --- !u!114 &114419222564130724
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -914,6 +945,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0
 --- !u!114 &114436795851618954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -925,6 +958,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0
 --- !u!114 &114549096256838992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -972,6 +1007,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0
 --- !u!114 &114711318349399162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -983,6 +1020,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0
 --- !u!114 &114720868754253252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -994,6 +1033,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0
 --- !u!114 &114734301715205158
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1023,6 +1064,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0
 --- !u!114 &114774475231069702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1034,6 +1077,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0
 --- !u!114 &114877565756454576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1045,6 +1090,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0
 --- !u!114 &114939090470843702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1056,6 +1103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0
 --- !u!114 &114993334788308068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1067,3 +1116,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6aa9ea40087d84a8bf3e421c671765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnotDistanceToNextKnot: 0
+  WorldDistanceToNextKnot: 0
