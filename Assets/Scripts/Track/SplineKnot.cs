@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SplineKnot : MonoBehaviour
 {
-    public float KnotDistanceTravelled;
+    public float KnotDistanceToNextKnot;
     public float WorldDistanceToNextKnot;
 
     void OnDrawGizmos()

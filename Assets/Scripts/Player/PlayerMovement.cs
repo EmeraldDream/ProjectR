@@ -4,13 +4,27 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    Transform playerTransform;
+
+    TrackWalker walker;
+
+    // Use this for initialization
+    void Start ()
+    {
+        playerTransform = GetComponent<Transform>();
+        walker = (GameObject.FindObjectOfType(typeof(TrackGenerator)) as TrackGenerator).GetWalker();
+    }
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+	void Update ()
+    {
+        if(walker != null)
+        {
+            walker.GetTransfrom(LaneType.Lane0, 0.2f, ref playerTransform);
+        }
+        else
+        {
+            walker = (GameObject.FindObjectOfType(typeof(TrackGenerator)) as TrackGenerator).GetWalker();
+        }
+    }
 }

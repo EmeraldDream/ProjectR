@@ -38,9 +38,9 @@ public class Spline : MonoBehaviour
     {
         Vector3 controlPoint = new Vector3();
         
-        if (m_Knots == null || m_Knots.Count < 3)
+        if (m_Knots == null)
             return controlPoint;
-        
+
         if (type == ControlPointType.Start)
             controlPoint = GetAdditionalControlPoint(m_Knots[0].transform, m_Knots[1].transform);
         else
@@ -83,6 +83,26 @@ public class Spline : MonoBehaviour
         controlPointsOut.Control3 = knotIndex < (m_Knots.Count - 2)
             ? m_Knots[knotIndex + 2].transform.position
             : m_LastSplineCP;
+    }
+
+    /// <summary>
+    /// Get ControlPoint Base on knotIndex
+    /// </summary>
+    /// <param name="knotIndex"></param>
+    /// <param name="controlPointsOut"></param>
+    public void GetControlUpsFor(int knotIndex, ref ControlPoint controlPointsOut)
+    {
+        Assert.IsTrue(knotIndex >= 0 && knotIndex < m_Knots.Count - 1,
+                   "knot index " + knotIndex + " is invalid, must be >=0 && < " + (m_Knots.Count - 1));
+
+        controlPointsOut.Control0 = knotIndex == 0
+            ? m_Knots.First().transform.up
+            : m_Knots[knotIndex - 1].transform.up;
+        controlPointsOut.Control1 = m_Knots[knotIndex].transform.up;
+        controlPointsOut.Control2 = m_Knots[knotIndex + 1].transform.up;
+        controlPointsOut.Control3 = knotIndex < (m_Knots.Count() - 2)
+            ? m_Knots[knotIndex + 2].transform.up
+            : m_Knots.Last().transform.up;
     }
 
     private void DrawLinearSpline(IList<SplineKnot> knots)
@@ -135,7 +155,10 @@ public class Spline : MonoBehaviour
         {
             return;
         }
-        
+
+        m_FirstSplineCP = GetAdditionalControlPoint(ControlPointType.Start);
+        m_LastSplineCP = GetAdditionalControlPoint(ControlPointType.End);
+
         Gizmos.color = Color.white;
 
         if (m_Knots.Count() < 3)
@@ -145,7 +168,7 @@ public class Spline : MonoBehaviour
     }
 
     /// <summary>
-    /// Calc Spline Lerp
+    /// Calc Position through Spline Lerp
     /// </summary>
     /// <param name="controlPoints"></param>
     /// <param name="t"></param>
@@ -162,25 +185,37 @@ public class Spline : MonoBehaviour
     }
 
     /// <summary>
+    /// Calc Tangent through Spline Lerp
+    /// </summary>
+    /// <param name="controlPoints"></param>
+    /// <param name="t"></param>
+    /// <returns></returns>
+    public static Vector3 CalculateTangent(ref ControlPoint controlPoints, float t)
+    {
+        float sqT = t * t;
+        var unnormalisedTangent = 0.5f
+            * ((-controlPoints[0] + 3.0f * controlPoints[1] - 3.0f * controlPoints[2] + controlPoints[3]) * 3.0f * sqT
+                + (2.0f * controlPoints[0] - 5.0f * controlPoints[1] + 4.0f * controlPoints[2] - controlPoints[3]) * 2.0f * t
+                - controlPoints[0] + controlPoints[2]
+                );
+        return unnormalisedTangent.normalized;
+    }
+
+    /// <summary>
     /// Calc Spline Detail From Linear
     /// </summary>
     /// <param name="knots"></param>
     private void CacheLinearKnots(IList<SplineKnot> knots)
     {
-        if (knots == null)
-        {
-            return;
-        }
-
         float totalLength = 0.0f;
 
         for (int knotIndex = 0; knotIndex < knots.Count() - 1; ++knotIndex)
         {
             Vector3 toNextKnot = (knots[knotIndex + 1].transform.position - knots[knotIndex].transform.position);
 
-            knots[knotIndex].KnotDistanceTravelled = knots[knotIndex].WorldDistanceToNextKnot = toNextKnot.magnitude;
+            knots[knotIndex].KnotDistanceToNextKnot = toNextKnot.magnitude;
 
-            totalLength += knots[knotIndex].KnotDistanceTravelled;
+            totalLength += knots[knotIndex].KnotDistanceToNextKnot;
         }
 
         Length = totalLength;
@@ -220,11 +255,15 @@ public class Spline : MonoBehaviour
                 prevPosition = newPosition;
             }
 
-            knots[knotIndex].KnotDistanceTravelled  = knotDistanceTravelled;
-            knots[knotIndex].WorldDistanceToNextKnot= linearDistToNextKnot;
+            knots[knotIndex].KnotDistanceToNextKnot = knotDistanceTravelled;
             totalLength += knotDistanceTravelled;
         }
 
         Length = totalLength;
+    }
+
+    public int GetKnotsCount()
+    {
+        return m_Knots.Count;
     }
 }
